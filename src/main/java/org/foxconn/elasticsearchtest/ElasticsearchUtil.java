@@ -29,6 +29,7 @@ public class ElasticsearchUtil {
 			searchRequest.source(searchSourceBuilder);
 			SearchResponse searchResponse = client.search(searchRequest);
 			System.out.println(searchResponse.toString());
+			
 		}
 		
 	}
