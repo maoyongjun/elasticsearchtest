@@ -29,3 +29,40 @@ Builder.aggregation(AggregationBuilders.terms(“top_10_states”)).field(“sta
 request.source(builder);//关联请求和查询
 restHighLevelClient.search(request);//进行查询
 
+
+
+
+
+
+ES中查询建议的使用：
+
+POST /test/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "suggest": {
+    "text": "chnia",
+    "mysuggest1": {
+      "term": {
+        "field": "content"
+      }
+    }
+  }
+}
+
+在这里 chnia 因为索引里面有china所以会输出为建议词 china
+
+
+text里面存放需要查询的文档，这个文档会通过分词后，给出查询建议。
+field是要查询的字段。
+
+suggest查询和query查询 的索引机制不一样，所以和模糊查询还是有差异。
+
+
+
+
+
+
+
+
