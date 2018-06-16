@@ -4,7 +4,18 @@
 	<groupId>org.foxconn.elasticsearchtest</groupId>
 	<artifactId>elasticsearchtest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+		<relativePath /> 
+		<!-- lookup parent from repository -->
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
@@ -17,6 +28,10 @@
 		<!-- <artifactId>elasticsearch</artifactId> -->
 		<!-- <version>6.2.4</version> -->
 		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
 	</dependencies>
 
 
