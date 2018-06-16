@@ -60,6 +60,21 @@ field是要查询的字段。
 suggest查询和query查询 的索引机制不一样，所以和模糊查询还是有差异。
 
 
+指标聚合：
+POST /test/_search
+{
+  "size":0,
+  "aggs": {
+    "NAME": {
+      "max": {
+        "field": "count"
+      }
+    }
+  }
+  
+}
+
+
 
 
 
